@@ -1,35 +1,26 @@
 #include <stdio.h>
 
-struct Marksheet {
-    int rollNo;
+struct Contact {
+    int id;
     char name[50];
-    int marks[3]; // 3 subjects
-    float total, percentage;
+    char phone[15];
 };
 
 int main() {
-    struct Marksheet m[100];
-    int n, i, j;
+    struct Contact c[100];
+    int n, i;
 
-    printf("Enter number of students: ");
+    printf("Enter number of contacts: ");
     scanf("%d", &n);
 
     for(i = 0; i < n; i++) {
-        printf("Enter RollNo, Name: ");
-        scanf("%d %s", &m[i].rollNo, m[i].name);
-        m[i].total = 0;
-        for(j = 0; j < 3; j++) {
-            printf("Enter marks for subject %d: ", j+1);
-            scanf("%d", &m[i].marks[j]);
-            m[i].total += m[i].marks[j];
-        }
-        m[i].percentage = m[i].total / 3.0;
+        printf("Enter ID, Name, Phone: ");
+        scanf("%d %s %s", &c[i].id, c[i].name, c[i].phone);
     }
 
-    printf("\n--- Marksheet ---\n");
+    printf("\n--- Contact Records ---\n");
     for(i = 0; i < n; i++) {
-        printf("RollNo: %d, Name: %s, Total: %.2f, Percentage: %.2f%%\n",
-               m[i].rollNo, m[i].name, m[i].total, m[i].percentage);
+        printf("ID: %d, Name: %s, Phone: %s\n", c[i].id, c[i].name, c[i].phone);
     }
 
     return 0;

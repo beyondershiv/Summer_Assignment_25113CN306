@@ -1,26 +1,27 @@
 #include <stdio.h>
 
-struct Salary {
-    int empId;
-    float basic, hra, da, gross;
+struct Ticket {
+    int ticketId;
+    char passenger[50];
+    char destination[50];
 };
 
 int main() {
-    struct Salary s[100];
+    struct Ticket t[100];
     int n, i;
 
-    printf("Enter number of employees: ");
+    printf("Enter number of tickets: ");
     scanf("%d", &n);
 
     for(i = 0; i < n; i++) {
-        printf("Enter EmpID, Basic, HRA, DA: ");
-        scanf("%d %f %f %f", &s[i].empId, &s[i].basic, &s[i].hra, &s[i].da);
-        s[i].gross = s[i].basic + s[i].hra + s[i].da;
+        printf("Enter TicketID, Passenger Name, Destination: ");
+        scanf("%d %s %s", &t[i].ticketId, t[i].passenger, t[i].destination);
     }
 
-    printf("\n--- Salary Records ---\n");
+    printf("\n--- Ticket Records ---\n");
     for(i = 0; i < n; i++) {
-        printf("EmpID: %d, Gross Salary: %.2f\n", s[i].empId, s[i].gross);
+        printf("TicketID: %d, Passenger: %s, Destination: %s\n",
+               t[i].ticketId, t[i].passenger, t[i].destination);
     }
 
     return 0;

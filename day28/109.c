@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Student {
+struct Book {
     int id;
-    char name[50];
-    int age;
+    char title[50];
+    char author[50];
 };
 
 int main() {
-    struct Student s[100];
+    struct Book b[100];
     int n, i;
 
-    printf("Enter number of students: ");
+    printf("Enter number of books: ");
     scanf("%d", &n);
 
     for(i = 0; i < n; i++) {
-        printf("Enter ID, Name, Age: ");
-        scanf("%d %s %d", &s[i].id, s[i].name, &s[i].age);
+        printf("Enter ID, Title, Author: ");
+        scanf("%d %s %s", &b[i].id, b[i].title, b[i].author);
     }
 
-    printf("\n--- Student Records ---\n");
+    printf("\n--- Library Records ---\n");
     for(i = 0; i < n; i++) {
-        printf("ID: %d, Name: %s, Age: %d\n", s[i].id, s[i].name, s[i].age);
+        printf("ID: %d, Title: %s, Author: %s\n", b[i].id, b[i].title, b[i].author);
     }
 
     return 0;

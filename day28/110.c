@@ -1,27 +1,26 @@
 #include <stdio.h>
-#include <string.h>
 
-struct Employee {
-    int empId;
+struct Account {
+    int accNo;
     char name[50];
-    char department[30];
+    float balance;
 };
 
 int main() {
-    struct Employee e[100];
+    struct Account a[100];
     int n, i;
 
-    printf("Enter number of employees: ");
+    printf("Enter number of accounts: ");
     scanf("%d", &n);
 
     for(i = 0; i < n; i++) {
-        printf("Enter EmpID, Name, Department: ");
-        scanf("%d %s %s", &e[i].empId, e[i].name, e[i].department);
+        printf("Enter AccNo, Name, Balance: ");
+        scanf("%d %s %f", &a[i].accNo, a[i].name, &a[i].balance);
     }
 
-    printf("\n--- Employee Records ---\n");
+    printf("\n--- Bank Accounts ---\n");
     for(i = 0; i < n; i++) {
-        printf("ID: %d, Name: %s, Dept: %s\n", e[i].empId, e[i].name, e[i].department);
+        printf("AccNo: %d, Name: %s, Balance: %.2f\n", a[i].accNo, a[i].name, a[i].balance);
     }
 
     return 0;
